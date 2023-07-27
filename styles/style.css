@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+:root {
+    --cor-primaria:#000000;
+    --cor-segundaria:#F6F6F6;
+    --cor-terciaria:#22D4FD;
+
+    --fonte-primaria: 'Krona One', sans-serif ;
+    --fonte-segundaria: 'Montserrat', sans-serif;
+}
+
+*{
+    padding: 0%;
+    margin: 0%;
+}
+
+body{
+    background-color: var(--cor-primaria);
+    /*height: 100vh;*/
+    color: var(--cor-segundaria);
+    box-sizing: border-box; /*o border-box no box-sizing garante que o elemento filho não venha sair de dentro do elemento pai*/
+}
+
+.apresentacao{
+    padding: 5% 15%; /*aqui estar "empurrando os elementos pra dentro da tela"*/
+    display: flex; /*o display flex coloca seus elementos um do lado do outro*/
+    align-items: center; /*alinhar os conteudos no centro */
+    justify-content: space-between; /*vai criar um espaço entre os elementos contidos dentro de apresentacao*/
+    gap: 82px;/* vai garantir um espaço entre a imagem e a section */
+}
+
+.apresentacao__perfil{
+    border-radius: 20px;
+    box-shadow: 10px 10px 15px var(--cor-terciaria);
+    width: 50%;/*o numero em % garante que o conteudo vai se adaptar a todos os tipos de tela*/
+}
+
+.titulo-destaque{
+    color: var(--cor-terciaria);
+}
+
+.apresentacao__conteudo{
+    width: 50%;
+    display: flex;
+    flex-direction: column; /*pra ficar estilo coluna e podermos alterar o espaçameno entre os elementos*/
+    gap: 40px;
+}
+
+.apresentacao__conteudo__titulo{
+    font-size: 2.25rem;
+    font-family: var(--fonte-primaria);
+}
+
+.apresentacao__conteudo__texto{
+    font-size: 1.5rem;
+    font-family: var(--fonte-segundaria);
+}
+
+.apresentacao__conteudo__botao{
+    display: flex;
+    justify-content: center; /*alinhando os itens no centro*/
+    gap:16px;
+    color: var(--cor-segundaria);
+    border: 2px solid var(--cor-terciaria);
+    font-family: var(--fonte-segundaria);
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-decoration: none; /*retirando o sublinhado dos links*/
+    width: 50%;
+    text-align: center;
+    border-radius: 8px;
+    padding: 21.5px 0; /*aqui foi informado um segundo valor ressaltando pra não mexer no eixo horizontal somente no vertical*/
+}
+
+.apresentacao__conteudo__links{
+    display: flex;
+    flex-direction: column; /*colocando os elementos no eixo vertical*/
+    justify-content: space-between;
+    align-items: center; /*alinhando no eixo vertical*/
+    gap: 32px; /*espaçamento entre os elementos no eixo vertical*/
+}
+
+.apresentacao__links__subtitulo{
+    font-family: var(--fonte-primaria);
+    font-weight: 400;
+}
+
+.apresentacao__conteudo__botao:hover{ /*o hover é o que acontece com o botão ao passar o mouse em cima */
+    background-color: #272727;
+    width: 410px;
+}
+
+footer{
+    background-color: var(--cor-terciaria);
+    color: var(--cor-primaria);
+    text-align: center;
+    padding: 24px;
+    font-family: var(--fonte-segundaria);
+    font-size: 1.5rem;
+    font-weight: 400;  
+}
+
+.cabecalho{
+    padding: 2% 0% 0% 15%;
+
+}
+
+.cabecalho__menu{
+    display: flex;
+    gap: 80px;
+}
+
+.cabecalho__menu__link{
+    color: var(--cor-terciaria);
+    text-decoration: none;
+    font-family: var(--fonte-segundaria);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.lista{
+    font-family: var(--fonte-segundaria);
+    font-size: 1.125rem;
+}
+
+/*abaixo está a configuração para adaptar a tela para dispositiveis móveis*/
+
+@media (max-width: 1200px) {
+    .apresentacao{
+        flex-direction: column-reverse;
+        padding: 5%;
+    }
+
+    .cabecalho{
+        padding: 10%;
+        justify-content: center;
+    }
+
+    .apresentacao__conteudo{
+        width: auto;/* aqui estamos definindo uma largura que se ajuste a tela de dispositiveis móveis*/
+    }
+}
